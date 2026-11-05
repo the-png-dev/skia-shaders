@@ -1,0 +1,72 @@
+{
+  "name": "@the-png-dev/skia-shaders",
+  "version": "0.1.0",
+  "description": "Bibliotheque de shaders SKSL pour react-native-skia : 27 effets prets a l'emploi, hook de compilation avec message d'erreur lisible, et composants pour poser l'effet sur une image.",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/typescript/index.d.ts",
+      "react-native": "./src/index.ts",
+      "import": "./lib/module/index.js",
+      "require": "./lib/commonjs/index.js",
+      "default": "./lib/commonjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.commonjs.json && tsc -p tsconfig.module.json && tsc -p tsconfig.types.json",
+    "clean": "rm -rf lib",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prepublishOnly": "npm run clean && npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "react-native",
+    "skia",
+    "shaders",
+    "sksl",
+    "runtime-effect",
+    "image-effects"
+  ],
+  "author": "the-png-dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-png-dev/skia-shaders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/the-png-dev/skia-shaders/issues"
+  },
+  "homepage": "https://github.com/the-png-dev/skia-shaders#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@shopify/react-native-skia": ">=2.0.0-next.4",
+    "react": ">=18.0.0",
+    "react-native": ">=0.72",
+    "react-native-reanimated": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native-reanimated": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@shopify/react-native-skia": "2.0.0-next.4",
+    "@types/react": "^19.0.0",
+    "react": "19.0.0",
+    "react-native": "0.79.5",
+    "react-native-reanimated": "^3.17.4",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "rootDir": "src",
+    "outDir": "lib/commonjs",
+    "declaration": false,
+    "sourceMap": false
+  }
+}
